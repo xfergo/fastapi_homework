@@ -1,12 +1,12 @@
 from fastapi import FastAPI
 from items_app.routers.items import items_router
-from items_app.db import engine
-from items_app.models import Base
+from items_app.lifespan import lifespan
 
 def create_app() -> FastAPI:
 
-    #Base.metadata.create_all(bind=engine)
-    app = FastAPI()
+    app = FastAPI(
+        lifespan=lifespan,
+    )
 
     app.include_router(items_router)
 
