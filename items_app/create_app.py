@@ -5,7 +5,7 @@ from items_app.models import Base
 
 def create_app() -> FastAPI:
 
-    Base.metadata.create_all(bind=engine)
+    #Base.metadata.create_all(bind=engine)
     app = FastAPI()
 
     app.include_router(items_router)

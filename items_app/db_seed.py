@@ -2,7 +2,7 @@ from sqlalchemy.orm import Session
 from items_app.models import Item, Base
 from items_app.db import engine
 
-Base.metadata.create_all(bind=engine)
+#Base.metadata.create_all(bind=engine)
 
 with Session(engine) as session:
     if session.query(Item).count() == 0:
